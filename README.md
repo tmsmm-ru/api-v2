@@ -175,7 +175,7 @@ order // идентификатор заказа
 ### Пример запроса
 
 ```
-https://tmsmm.ru/api/v2?action=refill&order=65ae5538afdd1,65ae580a540f5,65ae57daea2c8&key=yourKey
+https://tmsmm.ru/api/v2?action=refill&orders=65ae5538afdd1,65ae580a540f5,65ae57daea2c8&key=yourKey
 ```
 
 ### Параметры для запроса
@@ -265,6 +265,71 @@ refill // идентификаторы заказов, через запятую
     "status": {
       "error": "Refill not found"
     }
+  }
+]
+```
+
+
+## #Отмена заказа
+Используйте этот метод для отмены заказа
+
+### Пример запроса
+
+```
+https://tmsmm.ru/api/v2?action=cancel&order=65ae5538afdd1&key=yourKey
+```
+
+### Параметры для запроса
+
+```
+action=cancel // action
+order // идентификатор заказа
+```
+
+### Пример ответа
+
+```
+{
+  "ok": "true",
+  "success": "true",
+  "cancel": "65ae5538afdd1"
+}
+```
+
+
+## #Отмена заказов
+Используйте этот метод для отмены заказов
+
+### Пример запроса
+
+```
+https://tmsmm.ru/api/v2?action=cancel&orders=65ae5538afdd1,65ae580a540f5,65ae57daea2c8&key=yourKey
+```
+
+### Параметры для запроса
+
+```
+action=cancel // action
+orders // идентификаторы заказов, через запятую, максимум 100 штук 
+```
+
+### Пример ответа
+
+```
+[
+  {
+    "order": "65ae5538afdd1", // идентификатор заказа
+    "cancel": "65ae5538afdd1" // идентификатор отмены
+  },
+  {
+    "order": "65ae580a540f5", // идентификатор заказа
+    "cancel": "65ae5538afdd1" // идентификатор отмены
+  },
+  {
+    "order": "65ae57daea2c8", // идентификатор заказа
+    "cancel": {
+      "error": "Incorrect order ID"
+   }
   }
 ]
 ```
