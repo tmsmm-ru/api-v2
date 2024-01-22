@@ -166,7 +166,26 @@ try {
 
     $oTmSMM = new TmSMMApiV2($key);
 
-    // ..
+//    $services = $oTmSMM->services(); # Return all services
+//    $balance = $oTmSMM->balance(); # Return user balance
+//
+//    // Add order
+//    $order = $oTmSMM->order(['service' => 1, 'link' => 'https://example.com/test', 'quantity' => 100]); # Default
+//    $order = $oTmSMM->order(['service' => 1, 'link' => 'https://example.com/test', 'comments' => "good pic\like photo\n:)\n;)"]); # Custom Comments
+//    $order = $oTmSMM->order(['service' => 1, 'link' => 'https://example.com/test', 'quantity' => 100, 'answer_number' => '7']); # Poll
+//
+//    $status = $oTmSMM->status($order->order); # Return status, charge, remains, start count, currency
+//
+//    $statuses = $oTmSMM->multiStatus(['65ae4aa2535c2', '65ae4a63c277d', '65ae4a1d44856']); # Return orders status, charge, remains, start count, currency
+//
+//    $refill = (array)$oTmSMM->multiRefill(['65ae4a1d44856', '65ae4a63c277d']);
+//
+//    $refillIds = array_column($refill, 'refill');
+//
+//    if ($refillIds) {
+//        $refillStatuses = $oTmSMM->multiRefillStatus($refillIds);
+//    }
+    
 } catch (\Exception $e) {
     echo $e->getMessage();
 }
