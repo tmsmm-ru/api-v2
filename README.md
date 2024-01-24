@@ -18,7 +18,7 @@ https://tmsmm.ru/api/v2?action=balance&key=yourKey
 ```
 {
   "balance": "99.80", // текущий баланс
-  "currency": "USD" // валюта баланса
+  "currency": "RUB" // валюта баланса
 }
 ```
 
@@ -106,7 +106,7 @@ order // идентификатор заказа
   "start_count": "3572", // количество на момент активации заказа
   "status": "Partial", // статус заказа, один из: "In progress", "Completed", "Awaiting", "Canceled", "Fail" или "Partial"
   "remains": "157", // оставшееся количество
-  "currency": "USD" // валюта заказа
+  "currency": "RUB" // валюта заказа
 }
 ```
 
